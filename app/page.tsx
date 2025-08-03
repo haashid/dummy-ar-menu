@@ -6,7 +6,7 @@ import { Phone, MapPin, Clock, Star } from "lucide-react"
 
 export default function FastFoodMenu() {
   const pizzaItems = [
-    { name: "PEPPERONI", price: "9.99$", popular: true },
+    { name: "CHOCLATE", price: "9.99$", popular: true, link: "https://ar-code.com/dHlZCOsCS" },
     { name: "MARGARITA", price: "7.99$", popular: false },
     { name: "CARBONARA", price: "7.99$", popular: false },
     { name: "4 CHEESES", price: "7.99$", popular: false },
@@ -18,7 +18,7 @@ export default function FastFoodMenu() {
   ]
 
   const burgerItems = [
-    { name: "HAMBURGER", price: "1.99$", popular: true },
+    { name: "CHATS", price: "1.99$", popular: true, link: "https://ar-code.com/ZmtBU6T2p" },
     { name: "CHEESEBURGER", price: "1.99$", popular: false },
     { name: "CHICKENBURGER", price: "2.99$", popular: false },
     { name: "FISHBURGER", price: "2.99$", popular: false },
@@ -42,15 +42,9 @@ export default function FastFoodMenu() {
               <span className="text-2xl font-bold">FastFood</span>
             </div>
             <nav className="hidden md:flex space-x-6">
-              <a href="#menu" className="hover:text-orange-400 transition-colors">
-                Menu
-              </a>
-              <a href="#about" className="hover:text-orange-400 transition-colors">
-                About
-              </a>
-              <a href="#contact" className="hover:text-orange-400 transition-colors">
-                Contact
-              </a>
+              <a href="#menu" className="hover:text-orange-400 transition-colors">Menu</a>
+              <a href="#about" className="hover:text-orange-400 transition-colors">About</a>
+              <a href="#contact" className="hover:text-orange-400 transition-colors">Contact</a>
             </nav>
             <Button className="bg-orange-500 hover:bg-orange-600">Order Now</Button>
           </div>
@@ -61,58 +55,16 @@ export default function FastFoodMenu() {
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900"></div>
 
-        {/* Decorative Food Images */}
-        <div className="absolute top-10 left-10 w-20 h-20 opacity-20">
-          <Image
-            src="/placeholder.svg?height=80&width=80"
-            alt="Pizza"
-            width={80}
-            height={80}
-            className="rounded-full"
-          />
-        </div>
-        <div className="absolute top-20 right-20 w-16 h-16 opacity-20">
-          <Image
-            src="/placeholder.svg?height=64&width=64"
-            alt="Burger"
-            width={64}
-            height={64}
-            className="rounded-full"
-          />
-        </div>
-        <div className="absolute bottom-20 left-20 w-12 h-12 opacity-20">
-          <Image
-            src="/placeholder.svg?height=48&width=48"
-            alt="Fries"
-            width={48}
-            height={48}
-            className="rounded-full"
-          />
-        </div>
-        <div className="absolute bottom-10 right-10 w-14 h-14 opacity-20">
-          <Image
-            src="/placeholder.svg?height=56&width=56"
-            alt="Donut"
-            width={56}
-            height={56}
-            className="rounded-full"
-          />
-        </div>
-
         <div className="relative container mx-auto px-4 text-center">
           <h1 className="text-6xl md:text-8xl font-bold mb-4">
-            <span className="text-white">FASTFOOD</span>
-            <br />
+            <span className="text-white">FASTFOOD</span><br />
             <span className="text-orange-500">MENU</span>
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Delicious fast food delivered fresh to your door. From crispy pizzas to juicy burgers, we've got all your
-            favorites!
+            Delicious fast food delivered fresh to your door. From crispy pizzas to juicy burgers, we've got all your favorites!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-lg px-8 py-3">
-              View Menu
-            </Button>
+            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-lg px-8 py-3">View Menu</Button>
             <Button
               size="lg"
               variant="outline"
@@ -132,28 +84,19 @@ export default function FastFoodMenu() {
             <Card className="bg-slate-800 border-slate-700">
               <CardContent className="p-8">
                 <div className="flex items-center justify-between mb-8">
-                  <h2 className="text-4xl font-bold text-orange-500">PIZZA</h2>
-                  <Image
-                    src="/placeholder.svg?height=60&width=60"
-                    alt="Pizza"
-                    width={60}
-                    height={60}
-                    className="rounded-full"
-                  />
+                  <h2 className="text-4xl font-bold text-orange-500">CHOCOLATE</h2>
+                  <Image src="/placeholder.svg?height=60&width=60" alt="Chocolate" width={60} height={60} className="rounded-full" />
                 </div>
                 <div className="space-y-4">
                   {pizzaItems.map((item, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center justify-between py-2 border-b border-slate-700 last:border-b-0"
-                    >
+                    <div key={index} className="flex items-center justify-between py-2 border-b border-slate-700 last:border-b-0">
                       <div className="flex items-center space-x-3">
-                        {item.name === "PEPPERONI" ? (
+                        {item.link ? (
                           <a
-                            href="https://ar-code.com/dHlZCOsCS"
+                            href={item.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`font-semibold ${item.popular ? "text-orange-400 underline" : "text-white"}`}
+                            className={`font-semibold underline ${item.popular ? "text-orange-400" : "text-white"}`}
                           >
                             {item.name}
                           </a>
@@ -177,24 +120,26 @@ export default function FastFoodMenu() {
               <CardContent className="p-8">
                 <div className="flex items-center justify-between mb-8">
                   <h2 className="text-4xl font-bold text-white">BURGER</h2>
-                  <Image
-                    src="/placeholder.svg?height=60&width=60"
-                    alt="Burger"
-                    width={60}
-                    height={60}
-                    className="rounded-full"
-                  />
+                  <Image src="/placeholder.svg?height=60&width=60" alt="Burger" width={60} height={60} className="rounded-full" />
                 </div>
                 <div className="space-y-4">
                   {burgerItems.map((item, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center justify-between py-2 border-b border-slate-700 last:border-b-0"
-                    >
+                    <div key={index} className="flex items-center justify-between py-2 border-b border-slate-700 last:border-b-0">
                       <div className="flex items-center space-x-3">
-                        <span className={`font-semibold ${item.popular ? "text-orange-400" : "text-white"}`}>
-                          {item.name}
-                        </span>
+                        {item.link ? (
+                          <a
+                            href={item.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`font-semibold underline ${item.popular ? "text-orange-400" : "text-white"}`}
+                          >
+                            {item.name}
+                          </a>
+                        ) : (
+                          <span className={`font-semibold ${item.popular ? "text-orange-400" : "text-white"}`}>
+                            {item.name}
+                          </span>
+                        )}
                         {item.popular && <Badge className="bg-orange-500 text-xs">Popular</Badge>}
                       </div>
                       <div className="flex-1 mx-4 border-b border-dotted border-slate-600"></div>
@@ -205,26 +150,6 @@ export default function FastFoodMenu() {
               </CardContent>
             </Card>
           </div>
-        </div>
-
-        {/* More Decorative Elements */}
-        <div className="absolute top-10 left-5 w-16 h-16 opacity-10">
-          <Image
-            src="/placeholder.svg?height=64&width=64"
-            alt="Onion Rings"
-            width={64}
-            height={64}
-            className="rounded-full"
-          />
-        </div>
-        <div className="absolute bottom-10 right-5 w-20 h-20 opacity-10">
-          <Image
-            src="/placeholder.svg?height=80&width=80"
-            alt="Nuggets"
-            width={80}
-            height={80}
-            className="rounded-full"
-          />
         </div>
       </section>
 
